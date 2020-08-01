@@ -56,37 +56,17 @@
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>person</v-icon>
-          </v-list-item-icon>
+        <v-list-item-group v-model="model">
+          <v-list-item v-for="(items, i) in items" :key="i" link>
+            <v-list-item-icon>
+              <v-icon v-text="items.icon"></v-icon>
+            </v-list-item-icon>
 
-          <v-list-item-content>
-            <v-list-item-title>ພະນັກງານ</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-      <v-list dense nav>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>home_work</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>ສາຂາ</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-      <v-list dense nav>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>business</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>ພະແນກ</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+            <v-list-item-content>
+              <v-list-item-title v-text="items.text"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
     <v-navigation-drawer
@@ -107,40 +87,18 @@
       </v-list-item>
       <v-divider></v-divider>
 
-      <!-- <v-list dense nav>
+      <v-list dense nav>
         <v-list-item-group v-model="model">
-        <v-list-item v-for="(item,i) in items" :key="i" link>
-          <v-list-item-icon>
-            <v-icon v-text="item.ici"></v-icon>
-          </v-list-item-icon>
+          <v-list-item v-for="(items, i) in items" :key="i" link>
+            <v-list-item-icon>
+              <v-icon v-text="items.icon"></v-icon>
+            </v-list-item-icon>
 
-          <v-list-item-content>
-            <v-list-item-title>ພະນັກງານ</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+            <v-list-item-content>
+              <v-list-item-title v-text="items.text"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </v-list-item-group>
-      </v-list> -->
-      <v-list dense nav>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>business</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>ພະແນກ</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-      <v-list dense nav>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>home</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>ສາຂາ</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -156,21 +114,21 @@ export default {
     return {
       drawer: null,
       displayMini: false,
-      // items: [
-      //   {
-      //     icon: "home",
-      //     text: "ພະແນກ",
-      //   },
-      //   {
-      //     icon: "home_work",
-      //     text: "ສາຂາ",
-      //   },
-      //   {
-      //     icon: "person",
-      //     text: "ພະນັກງານ",
-      //   },
-      // ],
-      // model: 1,
+      items: [
+        {
+          icon: "home",
+          text: "ພະແນກ",
+        },
+        {
+          icon: "home_work",
+          text: "ສາຂາ",
+        },
+        {
+          icon: "person",
+          text: "ພະນັກງານ",
+        },
+      ],
+      model: 1,
     };
   },
 };
