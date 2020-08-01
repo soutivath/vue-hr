@@ -1,33 +1,5 @@
 <template>
-  <v-app>
-    <v-app-bar absolute color="white" elevate-on-scroll app>
-      <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.mdAndUp"
-        class="mr-5 ml-5 mt-2"
-        style="-webkit-box-shadow: -3px -3px 57px -3px rgba(0,0,0,0.33);
-        -moz-box-shadow: -3px -3px 57px -3px rgba(0,0,0,0.33);
-        box-shadow: -3px -3px 57px -3px rgba(0,0,0,0.33);"
-        @click="displayMini=!displayMini"
-      >
-        <v-icon v-if="displayMini==false">mdi mdi-dots-vertical</v-icon>
-      </v-app-bar-nav-icon>
-
-      <v-toolbar-title>Dashboard</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>mdi mdi-invert-colors</v-icon>
-      </v-btn>
-      <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.smAndDown"
-        class="mr-5 ml-5 mt-2"
-        style="-webkit-box-shadow: -3px -3px 57px -3px rgba(0,0,0,0.33);
-        -moz-box-shadow: -3px -3px 57px -3px rgba(0,0,0,0.33);
-        box-shadow: -3px -3px 57px -3px rgba(0,0,0,0.33);"
-        @click="drawer=!drawer"
-      ></v-app-bar-nav-icon>
-    </v-app-bar>
-
+ 
     <v-navigation-drawer
       v-if="$vuetify.breakpoint.mdAndUp"
       permanent
@@ -43,7 +15,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title>
-            <v-img src="./assets/logo/logo.png"></v-img>
+            <v-img src=""></v-img>
           </v-list-item-title>
           <v-list-item-subtitle class="ml-10" v-if="displayMini==false">Kasumi best girl</v-list-item-subtitle>
         </v-list-item-content>
@@ -136,29 +108,15 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-    <v-content>
-      <v-container>
-        <v-row>
-          <v-col md="12">
-             <tableComponent></tableComponent>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-content>
-  </v-app>
+  
 </template>
 <script>
-import tableComponent from './components/table.vue'
 export default {
   data() {
     return {
-      drawer: null,
+      
       displayMini: false,
     };
   },
-  components:{
-    tableComponent
-  }
 };
 </script>
